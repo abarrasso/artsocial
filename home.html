@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Local Art</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/home.js"></script>
+
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+
+</head>
+
+<body>
+    <div class="banner-container">
+        <nav class="navbar navbar-expand-lg  navbar-light navbar-static-top">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#"><p style="font-size:12px">Art Social<i class="material-icons" style="font-size:20px">share</i></p></a>
+
+            <!-- Toggler/collapsible Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Compatible for different sized screens -->
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="home.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="artists.html">ARTISTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">GENRES</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            EXHIBITIONS
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Audial</a>
+                            <a class="dropdown-item" href="#">Visual</a>
+                            <a class="dropdown-item" href="#">Interactive</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                    <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
+                    <li class="dropdown order-1">
+                        <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Login/Register<span
+                                class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right mt-2">
+                            <li class="px-3 py-2">
+                                <form class="form" role="form">
+                                    <div class="form-group">
+                                        <input id="emailInput" placeholder="Email" class="form-control form-control-sm"
+                                            type="text" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="passwordInput" placeholder="Password" class="form-control form-control-sm"
+                                            type="text" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot
+                                                password?</a></small>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Forgot password</h3>
+                    <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <p>Reset your password..</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-carousel">
+            <div class="search_container">
+                    <input class="search_input" type="text" placeholder="Search">
+                </div>
+        <div id="caro1" class="my-carousel carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#caro1" data-slide-to="0" class="active"></li>
+                <li data-target="#caro1" data-slide-to="1"></li>
+                <li data-target="#caro1" data-slide-to="2"></li>
+                <li data-target="#caro1" data-slide-to="3"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://cdn.cnn.com/cnnnext/dam/assets/170928122801-guggenheim-page-top.jpg" alt="Bauhaus">
+                    <div class="carousel-caption">
+                        <h1>ADMIRE</h1>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="http://d3us2i0tqwa7m7.cloudfront.net/pulses/14796250880610000/1441802508864_res_original.jpg"
+                        alt="Nina Kraviz">
+                    <div class="carousel-caption">
+                        <h1>DISCOVER</h1>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="http://www.blendbureaux.com/wp-content/uploads/2014/08/BIJENKORF_02_INESANNE.jpg" alt="fashion"
+                        height="300px" width="500px">
+                    <div class="carousel-caption">
+                        <h1>INNOVATE</h1>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://plainmagazine.com/wp-content/uploads/2018/05/andhika-ramadhikan-minimalism-01.jpg"
+                        alt="Warhol" height="300px" width="500px">
+                    <div class="carousel-caption">
+                        <h1>INSPIRE</h1>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#caro1" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#caro1" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="main-content">
+
+    <h1>Welcome to Art Social</h1>
+    <h1>What's happening in (select your city)</h1>
+    
+
+
+    <button onclick="getLocation()">give your location</button>
+    <p id="location"></p>
+    <div id="map"></div>
+    <div id="events"></div>
+    
+   
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXAEZ5K05R2KgnoZO7o7CxfR_-X9FuGsU&callback=initMap">
+    </script>
+    </div>
+    
+
+
+        <footer>
+                <p class="pull-right"><a href="#">Back to top</a></p>
+        
+            </footer>
+<script src="js/home.js"></script>
+</body>
+
+</html>

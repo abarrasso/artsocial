@@ -1,0 +1,105 @@
+<head>
+    <style>
+        img {
+            height:100px;
+        }
+        </style>
+    <script>
+   document.addEventListener("DOMContentLoaded", function(){
+      
+      var apikey = "ukOiSJ4btyGOtiXrgU1WzROaKMALf6ha";
+      //var url = "https://randomuser.me/api/?results=20";
+    
+      function ajax(url, callback){
+          fetch(url)
+           .then(res => { 
+               return res.json()
+            })
+           .then(handleData);
+      }
+
+      var currentData = null; 
+     // const formData = new FormData(document.getElementById(""));
+     /*  const request = new Request(url, {
+          cache: 'no cache',
+          headers: '_headers',
+          methd: 'POST',
+          body: JSON.stringify(formData) 
+      }); */ 
+
+     // fetch(request).then().catch();
+
+
+      function handleData(data){
+          console.log(data);
+          var html = "<table>";
+          data._embedded.events.forEach(result => {
+              let name =result.name;
+              let date = result.dates.start.localDate;
+              let time = result.dates.start.localTime;
+              let url = result.url;
+              let imge = result.images[0].url;
+              html += "<tr>";
+              html += "<td><img src='"+imge+"'></td>";
+              html += "<td>"+name+"</td>";
+              html += "<td>"+date+"</td>";
+              html += "<td>"+time+"</td>";
+              html += "<td><a href='"+url+"'>tix</a></td>";
+
+            html += "</tr>";
+          });
+          html += "</table>";
+          document.querySelector("output").innerHTML = html;
+      }
+    
+      //ajax(url, handleData);
+      // ajax(url, console.log);
+    
+
+     document.querySelector("button").addEventListener("click", function(){   
+         var city = document.querySelector("input").value;   
+         var classification = document.querySelector("select option:checked").textContent;
+          var url = "https://app.ticketmaster.com/discovery/v2/events.json?classificationName="+classification+"&city="+city+"&apikey=ukOiSJ4btyGOtiXrgU1WzROaKMALf6ha";
+
+              ajax(url, handleData);
+      }); 
+      
+    });
+
+/* $.ajax({
+  type:"GET",
+  url:"https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=ukOiSJ4btyGOtiXrgU1WzROaKMALf6ha",
+  async:true,
+  dataType: "json",
+  success: function(json) {
+              console.log(json);
+              // Parse the response.
+              // Do other things.
+           },
+  error: function(xhr, status, err) {
+              // This time, we do not end up here!
+           }
+}); */
+  
+/* const requestEvents = new Request(url);  
+fetch(requestEvents)
+.then(response => { response.text().then(text =>{
+
+})
+
+}); */
+  
+  </script>
+    </head>
+    <body>
+        <input placeholder="city">
+        <select>
+            <option>music</option>
+            <option>theater</option>
+            <option>art</option>
+        </select>
+        <button>Submit</button>
+        <output></output>
+    </body>
+    
+    
